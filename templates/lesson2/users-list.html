@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html
+        lang="en">
+<head
+        itemscope="" itemtype="http://schema.org/WebSite">
+    <meta
+            http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title
+            itemprop="name">Preview bootstrap html snippet. table user list</title>
+    <meta
+            name="description" itemprop="description"
+            content="Preview bootstrap html snippet. table user list. Copy and paste the html, css and js code for save time, build your app faster and responsive">
+    <meta
+            name="keywords"
+            content="html, css, javascript, themes, templates, code snippets, ui examples, react js, react-native, plagraounds, cards, front-end, profile, invoice, back-end, web-designers, web-developers">
+    <link
+            itemprop="sameAs" href="https://www.facebook.com/bootdey">
+    <link
+            itemprop="sameAs" href="https://x.com/bootdey">
+    <meta
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta
+            name="viewport" content="width=device-width">
+    <link
+            rel="shortcut icon" type="image/x-icon" href="/img/bootdey_favicon.ico">
+    <link
+            rel="apple-touch-icon" sizes="135x140" href="/img/bootdey_135x140.png">
+    <link
+            rel="apple-touch-icon" sizes="76x76" href="/img/bootdey_76x76.png">
+    <link
+            rel="canonical" href="https://www.bootdey.com/snippets/view/table-user-list" itemprop="url">
+    <meta
+            property="x:account_id" content="2433978487"/>
+    <meta
+            name="x:card" content="summary">
+    <meta
+            name="x:card" content="summary_large_image">
+    <meta
+            name="x:site" content="@bootdey">
+    <meta
+            name="x:creator" content="@bootdey">
+    <meta
+            name="x:title" content="Preview bootstrap html snippet. table user list">
+    <meta
+            name="x:description"
+            content="Preview bootstrap html snippet. table user list. Copy and paste the html, css and js code for save time, build your app faster and responsive">
+    <meta
+            name="x:image" content="https://www.bootdey.com/files/SnippetsImages/bootstrap-snippets-226.png">
+    <meta
+            name="x:url" content="https://www.bootdey.com/snippets/preview/table-user-list">
+    <meta
+            property="og:title" content="Preview bootstrap html snippet. table user list">
+    <meta
+            property="og:url" content="https://www.bootdey.com/snippets/preview/table-user-list">
+    <meta
+            property="og:image" content="https://www.bootdey.com/files/SnippetsImages/bootstrap-snippets-226.png">
+    <meta
+            property="og:description"
+            content="Preview bootstrap html snippet. table user list. Copy and paste the html, css and js code for save time, build your app faster and responsive">
+    <meta
+            name="msvalidate.01" content="23285BE3183727A550D31CAE95A790AB"/>
+    <script src="/cache-js/cache-1635427806-97135bbb13d92c11d6b2a92f6a36685a.js" type="text/javascript"></script>
+</head>
+<body>
+<div
+        id="snippetContent">
+    <link
+            rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script type='text/javascript'
+            src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link
+            rel="stylesheet" type="text/css"
+            href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <hr>
+    <div
+            class="container bootstrap snippets bootdey">
+        <div
+                class="row">
+            <div
+                    class="col-lg-12">
+                <div
+                        class="main-box no-header clearfix">
+                    <div
+                            class="main-box-body clearfix">
+                        <div
+                                class="table-responsive">
+                            <table
+                                    class="table user-list">
+                                <thead>
+                                <tr>
+                                    <th><span>User</span></th>
+                                    <th><span>Created</span></th>
+                                    <th
+                                            class="text-center"><span>Status</span></th>
+                                    <th><span>Email</span></th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for user in users %}
+                                    <tr>
+                                        <td><img
+                                                src="https://bootdey.com/img/Content/user_1.jpg" alt=""> <a
+                                                href="#" class="user-link">{{ user.username }}</a> <span
+                                                class="user-subhead">Member</span></td>
+                                        <td>{{ user.date_joined|date:'d/m/Y' }}</td>
+                                        <td class="text-center">
+                                            {% if user.is_active %}
+                                                <span class="label label-success">Active</span>
+                                            {% else %}
+                                                <span class="label label-danger">Inactive</span>
+                                            {% endif %}
+                                        </td>
+                                        <td><a
+                                                href="#"><span class="__cf_email__"
+                                                               data-cfemail="5b363a293734351b39293a353f3475383436">{{ user.email }}</span></a>
+                                        </td>
+                                        <td
+                                                style="width: 20%;"><a
+                                                href="#" class="table-link text-warning"> <span
+                                                class="fa-stack"> <i
+                                                class="fa fa-square fa-stack-2x"></i> <i
+                                                class="fa fa-search-plus fa-stack-1x fa-inverse"></i> </span> </a> <a
+                                                href="#" class="table-link text-info"> <span
+                                                class="fa-stack"> <i
+                                                class="fa fa-square fa-stack-2x"></i> <i
+                                                class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> </a> <a
+                                                href="#" class="table-link danger"> <span
+                                                class="fa-stack"> <i
+                                                class="fa fa-square fa-stack-2x"></i> <i
+                                                class="fa fa-trash-o fa-stack-1x fa-inverse"></i> </span> </a></td>
+                                    </tr>
+
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style type="text/css">body {
+        background: #eee;
+    }
+
+    .main-box.no-header {
+        padding-top: 20px;
+    }
+
+    .main-box {
+        background: #FFFFFF;
+        -webkit-box-shadow: 1px 1px 2px 0 #CCCCCC;
+        -moz-box-shadow: 1px 1px 2px 0 #CCCCCC;
+        -o-box-shadow: 1px 1px 2px 0 #CCCCCC;
+        -ms-box-shadow: 1px 1px 2px 0 #CCCCCC;
+        box-shadow: 1px 1px 2px 0 #CCCCCC;
+        margin-bottom: 16px;
+        -webikt-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    .table a.table-link.danger {
+        color: #e74c3c;
+    }
+
+    .label {
+        border-radius: 3px;
+        font-size: 0.875em;
+        font-weight: 600;
+    }
+
+    .user-list tbody td .user-subhead {
+        font-size: 0.875em;
+        font-style: italic;
+    }
+
+    .user-list tbody td .user-link {
+        display: block;
+        font-size: 1.25em;
+        padding-top: 3px;
+        margin-left: 60px;
+    }
+
+    a {
+        color: #3498db;
+        outline: none !important;
+    }
+
+    .user-list tbody td > img {
+        position: relative;
+        max-width: 50px;
+        float: left;
+        margin-right: 15px;
+    }
+
+    .table thead tr th {
+        text-transform: uppercase;
+        font-size: 0.875em;
+    }
+
+    .table thead tr th {
+        border-bottom: 2px solid #e7ebee;
+    }
+
+    .table tbody tr td:first-child {
+        font-size: 1.125em;
+        font-weight: 300;
+    }
+
+    .table tbody tr td {
+        font-size: 0.875em;
+        vertical-align: middle;
+        border-top: 1px solid #e7ebee;
+        padding: 12px 8px;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }</style>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="text/javascript"></script>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1RTS0P1CD"></script>
+<script>window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+
+gtag('config', 'G-F1RTS0P1CD');</script>
+</body>
+</html>
