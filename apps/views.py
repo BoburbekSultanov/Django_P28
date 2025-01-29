@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.shortcuts import render
 
-from apps.models import Project
+from apps.models import Project, Order
 from config.settings import BASE_DIR
 
 
@@ -172,3 +172,22 @@ def project_list(request):
     projects = Project.objects.all()
     context = {"projects": projects}
     return render(request, 'lesson2/products-list.html', context)
+
+
+def home_user_list(request):
+    users = User.objects.all()
+    context = {'users':users}
+    return render(request, 'lesson2/homework/user-list.html', context)
+
+
+def home_event_list(request):
+    users = User.objects.all()
+    context = {'users':users}
+    return render(request, 'lesson2/homework/event-list.html', context)
+
+
+def home_order_list(request):
+    orders = Order.objects.all()
+    context = {"orders" : orders}
+    return render(request, 'lesson2/homework/order-list.html', context)
+
