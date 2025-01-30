@@ -168,6 +168,7 @@ def user_list(request):
     users = User.objects.all()
     return render(request, 'lesson2/users-list.html', context={"users": users})
 
+
 def project_list(request):
     projects = Project.objects.all()
     context = {"projects": projects}
@@ -176,18 +177,25 @@ def project_list(request):
 
 def home_user_list(request):
     users = User.objects.all()
-    context = {'users':users}
+    context = {'users': users}
     return render(request, 'lesson2/homework/user-list.html', context)
 
 
 def home_event_list(request):
     users = User.objects.all()
-    context = {'users':users}
+    context = {'users': users}
     return render(request, 'lesson2/homework/event-list.html', context)
 
 
 def home_order_list(request):
     orders = Order.objects.all()
-    context = {"orders" : orders}
+    context = {"orders": orders}
     return render(request, 'lesson2/homework/order-list.html', context)
 
+
+def index_1(request):
+    return render(request, 'lesson_3/index1.html')
+
+
+def index_2(request, num):
+    return render(request, 'lesson_3/index2.html')
