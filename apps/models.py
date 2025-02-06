@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
-from django.db.models import Model, ImageField, ForeignKey, CASCADE, DateField, TextChoices
+from django.db.models import Model, ImageField, ForeignKey, CASCADE, DateField, TextChoices, TextField, FileField, \
+    DurationField
 from django.db.models.fields import  CharField, DecimalField
 
 
@@ -50,4 +51,21 @@ class Order(Model):
         return self.order
 
 
-# class
+class Film(Model):
+    title = TextField()
+    video = FileField(upload_to='film/video/')
+    main_image = ImageField(upload_to='film/images/')
+    duration = CharField(max_length=12)
+
+    def __str__(self):
+        return self.title
+
+
+class Todo(Model):
+    name = CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+

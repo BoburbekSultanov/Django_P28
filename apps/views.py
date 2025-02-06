@@ -4,8 +4,9 @@ from os.path import join
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.shortcuts import render
+from matplotlib.pyplot import title
 
-from apps.models import Project, Order
+from apps.models import Project, Order, Film, Todo
 from config.settings import BASE_DIR
 
 
@@ -199,3 +200,27 @@ def index_1(request):
 
 def index_2(request, num):
     return render(request, 'lesson_3/index2.html')
+
+
+def film_from(request):
+    if request.method == 'GET':
+        return render(request, 'lesson_4/film-from.html')
+    if request.method == 'POST':
+        post = request.POST
+        title = post.get('title')
+        video = post.get('video')
+        image = post.get('images')
+        duration = post.get('duration')
+        Film.objects.create(title=title, video=video, main_image=image, duration=duration)
+        return render(request, 'lesson_4/film-from.html')
+
+
+def todo_from(request):
+    # return render(request, 'lesson_4/todo-list.html')
+    if request.GET == 'GET':
+        return render(request, 'lesson_4/todo-list.html')
+    if request.POST == 'POST':
+        # name = request.POST.get('name')
+        # Todo.objects.create(name=name)
+        return render(request, 'lesson_4/todo-list.html')
+
